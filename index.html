@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sytle.css">
+</head>
+<body>
+    <main class="simulator-container">
+        <!-- New Hero Header -->
+        <header class="hero-section">
+            <h1>Process Scheduling Simulator</h1>
+            <p class="subtitle">Visualize & Understand CPU Scheduling Algorithms</p>
+            <div class="hero-buttons">
+                <a href="#simulator-app" id="hero-try-btn" class="btn btn-hero-primary">Try Simulator</a>
+                <a href="#about-section" id="hero-learn-btn" class="btn btn-hero-secondary">Learn More</a>
+            </div>
+        </header>
+
+        <!-- New About Section -->
+        <section id="about-section">
+            <h2>Why Use a Process Scheduling Simulator?</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Understand OS Fundamentals</h3>
+                    <p>See how operating systems efficiently manage multiple processes competing for CPU time. Make abstract concepts tangible.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Visualize Algorithms</h3>
+                    <p>Interactive Gantt charts instantly reveal scheduling decisions and process execution patterns for each algorithm.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Compare Performance</h3>
+                    <p>Analyze waiting time, turnaround time, and other key metrics to see the pros and cons of different scheduling strategies.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Learn by Doing</h3>
+                    <p>Perfect for students, developers, and OS enthusiasts. Experiment with different data to build a deep, practical understanding.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main content grid -->
+        <div class="main-content" id="simulator-app">
+
+            <!-- Left Column: Inputs & Config -->
+            <section class="config-column">
+                
+                <!-- Process Input Section -->
+                <div class="config-section" id="process-list-section">
+                    <h2 class="section-title">1. Add Processes</h2>
+                    
+                    <!-- Input Headers (Desktop) -->
+                    <div class="process-input-header">
+                        <label>Arrival Time (AT)</label>
+                        <label>Burst Time (BT)</label>
+                        <label>Priority (Pri)</label>
+                        <label>Actions</label>
+                    </div>
+                    
+                    <!-- Process List Container -->
+                    <div id="process-list" class="process-list-container">
+                        <!-- Process rows will be dynamically inserted here -->
+                    </div>
+                    
+                    <!-- Add Process Button -->
+                    <button id="add-process-btn" class="btn btn-primary" style="width: 100%;">
+                        Add Process
+                    </button>
+                </div>
+
+                <!-- Configuration Section -->
+                <div class="config-section">
+                    <h2 class="section-title">2. Choose Scheduling Algorithm</h2>
+                    
+                    <!-- New Algorithm Card Grid -->
+                    <div id="algorithm-grid" class="algorithm-grid">
+                        <!-- Algorithm cards will be dynamically inserted here -->
+                    </div>
+                    
+                    <!-- New Algorithm Details Box -->
+                    <div id="algo-details-box">
+                        <h5>Select an Algorithm</h5>
+                        <p>Click a card above to see details about the scheduling algorithm and how it works.</p>
+                    </div>
+
+                    <!-- Time Quantum Input (conditionally hidden) -->
+                    <div id="tq-input-container" class="hidden" style="margin-top: 1rem;">
+                        <label for="time-quantum">
+                            Time Quantum (for RR)
+                        </label>
+                        <input type="number" id="time-quantum" value="4" min="1">
+                    </div>
+                </div>
+
+                <!-- Run Button & Error Message -->
+                <div style="margin-top: auto;"> <!-- Pushes button to the bottom -->
+                    <button id="run-btn" class="btn btn-success" style="width: 100%;">
+                        <span>Run Simulation</span>
+                        <div id="run-spinner" class="spinner hidden" role="status"></div>
+                    </button>
+                    <div id="error-message" class="error-message"></div>
+                </div>
+            </section>
+
+            <!-- Right Column: Results -->
+            <section id="results-container" class="results-column hidden">
+                <h2 id="results-title" class="section-title">Results</h2>
+                
+                <!-- Gantt Chart -->
+                <h3 class="results-subtitle">Gantt Chart</h3>
+                <div class="gantt-chart-wrapper">
+                    <div id="gantt-chart-container" class="gantt-chart">
+                        <!-- Gantt blocks injected here -->
+                    </div>
+                </div>
+                <div id="gantt-legend" class="gantt-legend">
+                    <!-- Legend items injected here -->
+                </div>
+
+                <!-- Results Table -->
+                <h3 class="results-subtitle" style="margin-top: 2rem;">Process Details</h3>
+                <div id="results-table-container" class="table-responsive">
+                    <!-- Table will be injected here -->
+                </div>
+                
+                <!-- Results Averages -->
+                <h3 class="results-subtitle">Averages</h3>
+                <div id="results-averages" class="results-averages">
+                    <!-- Averages will be injected here -->
+                </div>
+            </section>
+
+        </div> 
+        <footer>
+            <p>Made with ❤️ by Shivam, Radhika, Aniket and Nandini.</p>
+        </footer>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>
